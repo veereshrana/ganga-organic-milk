@@ -87,8 +87,10 @@ document.getElementById("orderForm").addEventListener("submit", function(e){
   if(!/^[0-9+\-\s]{10,15}$/.test(phone)){ alert("कृपया सही मोबाइल नंबर लिखें।"); return; }
   if(!WHATSAPP_NUMBER){ alert("यह नमूना है। पहले HTML फ़ाइल में WHATSAPP_NUMBER में अपना व्यावसायिक WhatsApp नंबर जोड़ें।"); return; }
   const text = `नमस्ते ${BRAND_NAME}, मुझे उत्पाद के बारे में पूछताछ करनी है।\nनाम: ${name}\nमोबाइल: ${phone}\nउत्पाद: ${product}\nगाँव/कस्बा: ${area}\nसंदेश: ${message}`;
-  window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text), "_blank", "noopener");
+  window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text
+              =" + encodeURIComponent(text), "_blank", "noopener");
 });
 </script>
+  https://wa.me/918439282940?text=Namaste%2C%20mujhe%20Ganga%20Organic%20Milk%20ka%20order%20karna%20hai
 </body>
 </html>
