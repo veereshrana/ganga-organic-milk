@@ -94,6 +94,65 @@ document.getElementById("orderForm").addEventListener("submit", function(e){
               =" + encodeURIComponent(text), "_blank", "noopener");
 });
 </script>
+  
+<section id="milk-order" style="max-width:420px;margin:25px auto;padding:20px;border:1px solid #ddd;border-radius:12px;font-family:Arial,sans-serif;">
+  <h2>🥛 Ganga Organic Milk</h2>
+  <p>ताज़ा दूध — ₹60 प्रति लीटर</p>
+
+  <label for="customer">आपका नाम</label>
+  <input id="customer" type="text" placeholder="अपना नाम लिखें" style="width:100%;padding:10px;box-sizing:border-box;margin:8px 0 14px;">
+
+  <label for="quantity">दूध की मात्रा (लीटर)</label>
+  <input id="quantity" type="number" min="1" step="1" value="1" style="width:100%;padding:10px;box-sizing:border-box;margin:8px 0 14px;">
+
+  <label for="area">डिलीवरी का इलाका</label>
+  <select id="area" style="width:100%;padding:10px;box-sizing:border-box;margin:8px 0 14px;">
+    <option value="Islamnagar">Islamnagar</option>
+    <option value="Chandausi">Chandausi</option>
+  </select>
+
+  <p>कुल कीमत: ₹<strong id="total">60</strong></p>
+
+  <button type="button" onclick="sendMilkOrder()" style="width:100%;padding:13px;background:#16864a;color:white;border:0;border-radius:8px;font-size:16px;">
+    WhatsApp पर ऑर्डर करें
+  </button>
+</section>
+
+<script>
+function sendMilkOrder() {
+  const name = document.getElementById('customer').value.trim();
+  const qty = Number(document.getElementById('quantity').value);
+  const area = document.getElementById('area').value;
+
+  if (!name) {
+    alert('कृपया अपना नाम लिखें।');
+    return;
+  }
+
+  if (!Number.isInteger(qty) || qty < 1) {
+    alert('कृपया कम से कम 1 लीटर चुनें।');
+    return;
+  }
+
+  const total = qty * 60;
+  const message = `नमस्ते Ganga Organic Milk!
+नाम: ${name}
+दूध: ${qty} लीटर
+रेट: ₹60 प्रति लीटर
+कुल कीमत: ₹${total}
+डिलीवरी क्षेत्र: ${area}
+कृपया मेरा ऑर्डर कन्फर्म करें।`;
+
+  window.open('https://wa.me/918439282940?text=' + encodeURIComponent(message), '_blank');
+}
+
+document.getElementById('quantity').addEventListener('input', function() {
+  const qty = Number(this.value);
+  document.getElementById('total').textContent =
+    Number.isInteger(qty) && qty >= 1 ? qty * 60 : 0;
+});
+</script>
+  
 </body>
   
 <div style="text-align:center; margin:20px;">
