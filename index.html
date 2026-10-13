@@ -3,102 +3,202 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#075b40">
+<meta name="description" content="Ganga Organic Milk से दूध, आटा, घी, तेल और अन्य उत्पादों का WhatsApp पर ऑर्डर करें।">
 <title>Ganga Organic Milk</title>
 <style>
-body{font-family:Arial,sans-serif;background:#f5f8f0;color:#26372c;margin:0;line-height:1.6}
-header,footer{background:#23543b;color:white;text-align:center;padding:18px}
-main{max-width:850px;margin:auto;padding:15px}
-.hero{background:#23543b;color:white;padding:22px;border-radius:18px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.card{background:white;border:1px solid #ddd;border-radius:14px;padding:12px}
-input,select,textarea{box-sizing:border-box;width:100%;padding:10px;margin:5px 0 12px;border:1px solid #ccc;border-radius:8px}
-button,.btn{display:block;width:100%;box-sizing:border-box;padding:12px;background:#eec65b;color:#203428;border:0;border-radius:10px;font-weight:bold;text-align:center;text-decoration:none}
-h2{color:#23543b}
-.price{font-weight:bold;color:#23543b}
-.bill{background:#e8f1e7;padding:12px;border-radius:12px}
-@media(max-width:400px){.grid{grid-template-columns:1fr}}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f8f1;color:#173d2d;line-height:1.6}
+header{background:linear-gradient(135deg,#064e38,#168052);color:white;text-align:center;padding:30px 16px}
+header h1{font-size:34px;margin:5px}
+header h2{color:#ffe18a;font-size:21px;margin:8px}
+header p{max-width:600px;margin:10px auto}
+.badges{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.badges span{border:1px solid #ffffff80;border-radius:20px;padding:5px 10px}
+main{max-width:850px;margin:auto;padding:18px 14px}
+h2.title{text-align:center}
+.sub{text-align:center;color:#52675b}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.product,.form,.summary,.features{background:white;border:1px solid #dce8dd;border-radius:15px;padding:14px;margin-bottom:12px}
+.product h3{margin:0}
+.price{font-weight:bold;color:#08734c;font-size:19px}
+label{display:block;margin-top:8px}
+input,select,textarea{width:100%;padding:11px;border:1px solid #cbd8ce;border-radius:9px;font:inherit;background:white}
+.total{margin-top:8px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.full{grid-column:1/-1}
+.summary{background:#e4f2e7;padding:20px}
+.summary p{font-size:18px}
+.grand{font-size:23px!important;font-weight:bold;border-top:1px solid #bfd8c6;padding-top:12px}
+button{width:100%;border:0;background:#ffca43;padding:15px;border-radius:12px;font-size:18px;font-weight:bold;color:#173d2d;cursor:pointer}
+.note{font-size:14px;color:#53675b}
+.features{background:#e4f2e7}
+.featuregrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.feature{background:white;padding:12px;border-radius:10px}
+footer{background:#075b40;color:white;text-align:center;padding:25px 12px;margin-top:20px}
+footer h2{margin:0;font-size:26px}
+footer a{color:#ffe18a}
+@media(min-width:650px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:360px){.formgrid,.featuregrid{grid-template-columns:1fr}.full{grid-column:auto}}
 </style>
 </head>
 <body>
-<header><h2 style="color:white">🌿 Ganga Organic Milk</h2>शुद्धता • भरोसा • ताज़गी</header>
+
+<header>
+<div style="font-size:42px">🌿🥛</div>
+<h1>Ganga Organic Milk</h1>
+<h2>शुद्धता का भरोसा, हर घर तक!</h2>
+<p>दूध, आटा, घी, तेल और अन्य खाद्य उत्पाद अब एक ही जगह। अपनी पसंद चुनें और WhatsApp पर आसानी से ऑर्डर करें।</p>
+<div class="badges">
+<span>🥛 रोज़मर्रा के उत्पाद</span>
+<span>📲 आसान ऑर्डर</span>
+<span>🏡 स्थानीय डिलीवरी</span>
+</div>
+</header>
+
 <main>
-<div class="hero">
-<h1>घर बैठे ऑर्डर करें</h1>
-<p>दूध, आटा, घी, तेल और अन्य उत्पाद आपके लिए।</p>
-<a class="btn" href="#order">ऑर्डर शुरू करें</a>
+<h2 class="title">🛒 अपने उत्पाद चुनें</h2>
+<p class="sub">मात्रा भरें, कुल कीमत अपने आप जुड़ जाएगी।</p>
+
+<div class="products">
+<div class="product">
+<h3>🥛 दूध</h3><div class="price">₹80 / लीटर</div>
+<label>मात्रा (लीटर)</label>
+<input id="milk" type="number" min="0" step="0.5" value="0">
+<div class="total">कुल: <b id="milkT">₹0</b></div>
+</div>
+<div class="product">
+<h3>🌾 आटा</h3><div class="price">₹45 / किलो</div>
+<label>मात्रा (किलो)</label>
+<input id="atta" type="number" min="0" step="0.5" value="0">
+<div class="total">कुल: <b id="attaT">₹0</b></div>
+</div>
+<div class="product">
+<h3>🧈 घी</h3><div class="price">₹1200 / किलो</div>
+<label>मात्रा (किलो)</label>
+<input id="ghee" type="number" min="0" step="0.25" value="0">
+<div class="total">कुल: <b id="gheeT">₹0</b></div>
+</div>
+<div class="product">
+<h3>🛢️ तेल</h3><div class="price">₹180 / लीटर</div>
+<label>मात्रा (लीटर)</label>
+<input id="oil" type="number" min="0" step="0.5" value="0">
+<div class="total">कुल: <b id="oilT">₹0</b></div>
+</div>
+<div class="product">
+<h3>🥣 दही</h3><div class="price">कीमत पूछें</div>
+<label>मात्रा लिखें</label>
+<input id="curd" placeholder="जैसे 1 किलो">
+</div>
+<div class="product">
+<h3>🧺 अन्य उत्पाद</h3><div class="price">उपलब्धता पूछें</div>
+<label>उत्पाद और मात्रा</label>
+<input id="other" placeholder="जैसे पनीर 500 ग्राम">
+</div>
 </div>
 
-<h2>हमारे उत्पाद</h2>
-<div class="grid">
-<div class="card">🥛 <b>दूध</b><p class="price">₹80 / लीटर</p><label>मात्रा (लीटर)</label><input id="milk" type="number" min="0" step="0.5" value="0"></div>
-<div class="card">🌾 <b>आटा</b><p class="price">₹45 / किलो</p><label>मात्रा (किलो)</label><input id="atta" type="number" min="0" step="0.5" value="0"></div>
-<div class="card">🧈 <b>घी</b><p class="price">₹1200 / किलो</p><label>मात्रा (किलो)</label><input id="ghee" type="number" min="0" step="0.25" value="0"></div>
-<div class="card">🫗 <b>तेल</b><p class="price">₹180 / लीटर</p><label>मात्रा (लीटर)</label><input id="oil" type="number" min="0" step="0.5" value="0"></div>
-<div class="card">🥣 <b>दही</b><p class="price">कीमत पूछें</p><label>मात्रा (किलो)</label><input id="curd" type="number" min="0" step="0.5" value="0"></div>
-<div class="card">🛍️ <b>अन्य उत्पाद</b><p class="price">कीमत पूछें</p><label>नाम</label><input id="other" placeholder="जैसे शहद, दाल"><label>मात्रा</label><input id="otherQty" type="number" min="0" value="0"></div>
+<div class="form">
+<h3>📦 डिलीवरी की जानकारी</h3>
+<div class="formgrid">
+<div><label>आपका नाम *</label><input id="name" placeholder="पूरा नाम"></div>
+<div><label>मोबाइल नंबर *</label><input id="phone" type="tel" placeholder="10 अंकों का नंबर"></div>
+<div class="full">
+<label>क्षेत्र चुनें *</label>
+<select id="area">
+<option value="">क्षेत्र चुनें</option>
+<option>Islamnagar</option>
+<option>Chandausi</option>
+<option>अन्य क्षेत्र (पहले पूछें)</option>
+</select>
+</div>
+<div class="full"><label>पूरा पता *</label><textarea id="address" rows="2" placeholder="घर, गली और मोहल्ला"></textarea></div>
+<div class="full"><label>अतिरिक्त जानकारी</label><textarea id="notes" rows="2" placeholder="वैकल्पिक"></textarea></div>
+</div>
 </div>
 
-<h2 id="order">ऑर्डर की जानकारी</h2>
-<label>आपका नाम *</label><input id="name" placeholder="पूरा नाम">
-<label>मोबाइल नंबर</label><input id="phone" inputmode="tel" placeholder="वैकल्पिक">
-<label>डिलीवरी क्षेत्र *</label>
-<select id="area"><option value="">क्षेत्र चुनें</option><option>इस्लामनगर</option><option>चन्दौसी</option><option>अन्य</option></select>
-<label>पूरा पता *</label><textarea id="address" placeholder="घर, गली और मोहल्ला"></textarea>
-<label>अतिरिक्त जानकारी</label><textarea id="note" placeholder="वैकल्पिक"></textarea>
-
-<div class="bill">
-<p>दूध: <b id="mTotal">₹0</b></p>
-<p>आटा: <b id="aTotal">₹0</b></p>
-<p>घी: <b id="gTotal">₹0</b></p>
-<p>तेल: <b id="oTotal">₹0</b></p>
-<h3>ज्ञात कीमतों का कुल: <span id="total">₹0</span></h3>
-<p>दही और अन्य उत्पादों की कीमत WhatsApp पर पक्की होगी।</p>
+<div class="summary">
+<h3>🧾 आपके ऑर्डर का हिसाब</h3>
+<p>दूध: <b id="sumMilk">₹0</b></p>
+<p>आटा: <b id="sumAtta">₹0</b></p>
+<p>घी: <b id="sumGhee">₹0</b></p>
+<p>तेल: <b id="sumOil">₹0</b></p>
+<p class="grand">ज्ञात कीमतों का कुल: <span id="grand">₹0</span></p>
+<p class="note">दही, अन्य उत्पादों और डिलीवरी शुल्क की कीमत WhatsApp पर पक्की होगी।</p>
+<button type="button" onclick="sendOrder()">📲 WhatsApp पर ऑर्डर भेजें</button>
+<p class="note">WhatsApp खुलने पर ऑर्डर भेजने के लिए Send दबाएँ।</p>
 </div>
-<button onclick="sendOrder()">WhatsApp पर ऑर्डर भेजें</button>
-<p>ऑर्डर भेजने के लिए WhatsApp खुलने पर Send दबाएँ।</p>
+
+<div class="features">
+<h2>💚 Ganga Organic Milk क्यों चुनें?</h2>
+<div class="featuregrid">
+<div class="feature"><b>🥛 रोज़मर्रा के उत्पाद</b><br>घर के लिए ज़रूरी सामान एक जगह।</div>
+<div class="feature"><b>📲 आसान ऑर्डर</b><br>सीधे WhatsApp पर ऑर्डर भेजें।</div>
+<div class="feature"><b>🤝 भरोसेमंद सेवा</b><br>कीमत और ऑर्डर की पुष्टि सीधे।</div>
+<div class="feature"><b>🏡 स्थानीय डिलीवरी</b><br>Islamnagar और Chandausi में।</div>
+</div>
+<h2 style="text-align:center">🌿 शुद्धता का भरोसा, हर घर तक!</h2>
+<p style="text-align:center">आपका भरोसा ही हमारी पहचान है। 🙏</p>
+</div>
 </main>
-<footer>Ganga Organic Milk<br>दूध • आटा • घी • तेल • अन्य उत्पाद</footer>
+
+<footer>
+<h2>Ganga Organic Milk</h2>
+<p>दूध • आटा • घी • तेल • दही • अन्य उत्पाद</p>
+<p>📍 Islamnagar और Chandausi</p>
+<p>📲 ऑर्डर: <a href="https://wa.me/918439282940">WhatsApp पर संपर्क करें</a></p>
+<p>धन्यवाद! हम पर विश्वास करने के लिए ❤️</p>
+</footer>
 
 <script>
-const price={milk:80,atta:45,ghee:1200,oil:180};
-function val(id){return Math.max(0,Number(document.getElementById(id).value)||0)}
-function rupees(n){return '₹'+n.toLocaleString('en-IN',{maximumFractionDigits:2})}
-function bill(){
-let m=val('milk')*price.milk;
-let a=val('atta')*price.atta;
-let g=val('ghee')*price.ghee;
-let o=val('oil')*price.oil;
-document.getElementById('mTotal').textContent=rupees(m);
-document.getElementById('aTotal').textContent=rupees(a);
-document.getElementById('gTotal').textContent=rupees(g);
-document.getElementById('oTotal').textContent=rupees(o);
-document.getElementById('total').textContent=rupees(m+a+g+o);
+const prices={milk:80,atta:45,ghee:1200,oil:180};
+function rupees(n){return "₹"+(Math.round(n*100)/100);}
+function qty(id){
+let n=Number(document.getElementById(id).value);
+return Number.isFinite(n)&&n>0?n:0;
 }
-['milk','atta','ghee','oil','curd','otherQty'].forEach(id=>{
-document.getElementById(id).addEventListener('input',bill);
-});
+function update(){
+let grand=0;
+for(let id of Object.keys(prices)){
+let total=qty(id)*prices[id];
+document.getElementById(id+"T").textContent=rupees(total);
+let sumId={milk:"sumMilk",atta:"sumAtta",ghee:"sumGhee",oil:"sumOil"}[id];
+document.getElementById(sumId).textContent=rupees(total);
+grand+=total;
+}
+document.getElementById("grand").textContent=rupees(grand);
+}
+Object.keys(prices).forEach(id=>document.getElementById(id).addEventListener("input",update));
 function sendOrder(){
-let name=document.getElementById('name').value.trim();
-let area=document.getElementById('area').value;
-let address=document.getElementById('address').value.trim();
-if(!name||!area||!address){alert('कृपया नाम, क्षेत्र और पता भरें।');return}
-let m=val('milk'),a=val('atta'),g=val('ghee'),o=val('oil'),c=val('curd'),q=val('otherQty');
-if(m+a+g+o+c+q===0){alert('कम से कम एक उत्पाद चुनें।');return}
-let lines=['नमस्ते, मुझे Ganga Organic Milk से ऑर्डर करना है।','नाम: '+name,'मोबाइल: '+(document.getElementById('phone').value||'नहीं दिया'),'क्षेत्र: '+area,'पता: '+address,'','ऑर्डर:'];
-if(m)lines.push('दूध '+m+' लीटर = '+rupees(m*80));
-if(a)lines.push('आटा '+a+' किलो = '+rupees(a*45));
-if(g)lines.push('घी '+g+' किलो = '+rupees(g*1200));
-if(o)lines.push('तेल '+o+' लीटर = '+rupees(o*180));
-if(c)lines.push('दही '+c+' किलो (कीमत की पुष्टि चाहिए)');
-if(q)lines.push('अन्य: '+(document.getElementById('other').value||'नाम नहीं दिया')+', मात्रा '+q+' (कीमत पूछें)');
-lines.push('ज्ञात कीमतों का कुल: '+rupees(m*80+a*45+g*1200+o*180));
-if(document.getElementById('note').value)lines.push('जानकारी: '+document.getElementById('note').value);
-window.open('https://wa.me/918439282940?text='+encodeURIComponent(lines.join('\n')),'_blank');
+let name=document.getElementById("name").value.trim();
+let phone=document.getElementById("phone").value.trim();
+let area=document.getElementById("area").value;
+let address=document.getElementById("address").value.trim();
+if(!name||!phone||!area||!address){
+alert("कृपया नाम, मोबाइल नंबर, क्षेत्र और पूरा पता भरें।");return;
 }
-bill();
+if(!/^[0-9+\-\s]{10,16}$/.test(phone)){
+alert("कृपया सही मोबाइल नंबर भरें।");return;
+}
+let lines=["नमस्ते Ganga Organic Milk! मुझे ऑर्डर करना है।","",
+"नाम: "+name,"मोबाइल: "+phone,"क्षेत्र: "+area,"पता: "+address,"","ऑर्डर:"];
+let has=false;
+for(let [id,label,unit] of [["milk","दूध","लीटर"],["atta","आटा","किलो"],["ghee","घी","किलो"],["oil","तेल","लीटर"]]){
+let n=qty(id);
+if(n>0){has=true;lines.push(label+": "+n+" "+unit+" — "+rupees(n*prices[id]));}
+}
+let curd=document.getElementById("curd").value.trim();
+let other=document.getElementById("other").value.trim();
+if(curd){has=true;lines.push("दही: "+curd+" (कीमत की पुष्टि करें)");}
+if(other){has=true;lines.push("अन्य उत्पाद: "+other+" (कीमत की पुष्टि करें)");}
+if(!has){alert("कृपया कम से कम एक उत्पाद की मात्रा या नाम भरें।");return;}
+lines.push("","ज्ञात कीमतों का कुल: "+document.getElementById("grand").textContent,
+"दही/अन्य उत्पाद और डिलीवरी शुल्क की कीमत की पुष्टि करें।");
+let notes=document.getElementById("notes").value.trim();
+if(notes)lines.push("अतिरिक्त जानकारी: "+notes);
+window.location.href="https://wa.me/918439282940?text="+encodeURIComponent(lines.join("\n"));
+}
+update();
 </script>
 </body>
 </html>
-
-
