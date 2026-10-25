@@ -4,22 +4,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ganga Organic Milk | चंदौसी</title>
+<title>Ganga Organic Milk | चंदौसी और इस्लामनगर</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f3f8f1;color:#173d2d;line-height:1.6}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f8f1;color:#173d2d}
 header{background:linear-gradient(135deg,#064e38,#168052);color:white;text-align:center;padding:28px 12px}
 header h1{margin:0;font-size:30px}
-nav{background:white;padding:12px;text-align:center;position:sticky;top:0}
+nav{background:white;padding:13px;text-align:center;position:sticky;top:0}
 nav a{margin:0 8px;color:#14532d;text-decoration:none;font-weight:bold}
 main{max-width:1000px;margin:auto;padding:16px}
 .hero,.contact{background:white;padding:22px;border-radius:16px;margin-bottom:20px}
 h2{color:#14532d}
+.free{background:#dcfce7;border:2px solid #16a34a;border-radius:15px;text-align:center;padding:20px;margin:20px 0;color:#166534}
+.free h2{margin:0;font-size:27px}
 .products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .card{background:white;border:1px solid #dce8d7;border-radius:14px;padding:16px;text-align:center;box-shadow:0 3px 10px #00000008}
-.emoji{font-size:36px}
+.emoji{font-size:38px}
 .card h3{margin:8px 0;color:#14532d}
-.price{font-size:22px;font-weight:bold;margin:8px}
+.price{font-size:23px;font-weight:bold;margin:10px}
 button,.btn{background:#15803d;color:white;border:0;border-radius:9px;padding:12px;font-weight:bold;text-decoration:none;display:inline-block;cursor:pointer}
 .card button{width:100%}
 .delivery{background:#e4f2df;padding:18px;border-radius:14px;margin:20px 0}
@@ -36,7 +38,7 @@ footer{background:#0b3520;color:white;text-align:center;padding:22px;margin-top:
 <div style="font-size:38px">🥛</div>
 <h1>Ganga Organic Milk</h1>
 <p>शुद्धता • ताज़गी • भरोसा</p>
-<p>📍 चंदौसी | सुबह 7 बजे डिलीवरी</p>
+<p>📍 चंदौसी और इस्लामनगर, उत्तर प्रदेश</p>
 </header>
 <nav>
 <a href="#products">उत्पाद</a>
@@ -49,21 +51,30 @@ footer{background:#0b3520;color:white;text-align:center;padding:22px;margin-top:
 <p>Ganga Organic Milk में आपका स्वागत है। अपने पसंदीदा उत्पाद चुनें और WhatsApp पर ऑर्डर भेजें।</p>
 <a class="btn" href="#products">उत्पाद देखें</a>
 </section>
+
+<section class="free">
+<h2>🚚 FREE HOME DELIVERY</h2>
+<p><b>चंदौसी और इस्लामनगर में</b></p>
+<p>सभी 6 उत्पादों पर • डिलीवरी सुबह 7 बजे</p>
+</section>
+
 <section id="products">
 <h2 style="text-align:center">हमारे उत्पाद और कीमतें</h2>
 <div class="products">
-<div class="card"><div class="emoji">🐃</div><h3>भैंस का दूध</h3><p>प्रति लीटर</p><div class="price">₹80</div><button onclick="pick('भैंस का दूध')">ऑर्डर करें</button></div>
 <div class="card"><div class="emoji">🐄</div><h3>गाय का दूध</h3><p>प्रति लीटर</p><div class="price">₹70</div><button onclick="pick('गाय का दूध')">ऑर्डर करें</button></div>
+<div class="card"><div class="emoji">🐃</div><h3>भैंस का दूध</h3><p>प्रति लीटर</p><div class="price">₹80</div><button onclick="pick('भैंस का दूध')">ऑर्डर करें</button></div>
 <div class="card"><div class="emoji">🥣</div><h3>ऑर्गेनिक दही</h3><p>प्रति किलो</p><div class="price">₹80</div><button onclick="pick('ऑर्गेनिक दही')">ऑर्डर करें</button></div>
 <div class="card"><div class="emoji">🧈</div><h3>घी</h3><p>प्रति किलो</p><div class="price">₹1,400</div><button onclick="pick('घी')">ऑर्डर करें</button></div>
 <div class="card"><div class="emoji">🥛</div><h3>छाछ</h3><p>प्रति लीटर</p><div class="price">₹60</div><button onclick="pick('छाछ')">ऑर्डर करें</button></div>
 <div class="card"><div class="emoji">🌻</div><h3>सरसों का तेल</h3><p>प्रति किलो</p><div class="price">₹190</div><button onclick="pick('सरसों का तेल')">ऑर्डर करें</button></div>
 </div>
 </section>
+
 <div class="delivery">
-<h3>🕖 सुबह 7 बजे डिलीवरी</h3>
-<p>ऑर्डर की पुष्टि WhatsApp पर करें।</p>
+<h3>🕖 डिलीवरी का समय: सुबह 7 बजे</h3>
+<p>डिलीवरी क्षेत्र: चंदौसी और इस्लामनगर</p>
 </div>
+
 <section id="order">
 <h2>WhatsApp पर ऑर्डर करें</h2>
 <form id="orderForm">
@@ -72,8 +83,8 @@ footer{background:#0b3520;color:white;text-align:center;padding:22px;margin-top:
 <label>उत्पाद</label>
 <select id="product" required>
 <option value="">उत्पाद चुनें</option>
-<option>भैंस का दूध</option>
 <option>गाय का दूध</option>
+<option>भैंस का दूध</option>
 <option>ऑर्गेनिक दही</option>
 <option>घी</option>
 <option>छाछ</option>
@@ -81,21 +92,29 @@ footer{background:#0b3520;color:white;text-align:center;padding:22px;margin-top:
 </select>
 <label>मात्रा</label>
 <input id="qty" type="number" min="0.25" step="0.25" value="1" required>
-<label>डिलीवरी का पता</label>
-<textarea id="address" required placeholder="अपना पूरा पता लिखें"></textarea>
+<label>डिलीवरी लोकेशन</label>
+<select id="location" required>
+<option value="">शहर चुनें</option>
+<option>चंदौसी</option>
+<option>इस्लामनगर</option>
+</select>
+<label>पूरा पता</label>
+<textarea id="address" required placeholder="मोहल्ला और पूरा पता लिखें"></textarea>
 <button type="submit" style="width:100%;margin-top:15px">WhatsApp पर ऑर्डर भेजें</button>
 </form>
 </section>
+
 <section id="contact" class="contact">
 <h2>संपर्क करें</h2>
-<p>Ganga Organic Milk, चंदौसी, उत्तर प्रदेश</p>
-<p>डिलीवरी समय: सुबह 7 बजे</p>
-<a class="btn" href="https://wa.me/918439282940" target="_blank">WhatsApp: 8439282940</a>
+<p>Ganga Organic Milk</p>
+<p>📍 चंदौसी और इस्लामनगर, उत्तर प्रदेश</p>
+<p>🕖 सुबह 7 बजे डिलीवरी</p>
+<a class="btn" href="https://wa.me/918439282940" target="_blank" rel="noopener">WhatsApp: 8439282940</a>
 </section>
 </main>
-<footer>© 2026 Ganga Organic Milk | चंदौसी</footer>
+<footer>© 2026 Ganga Organic Milk</footer>
 <script>
-const prices={'भैंस का दूध':80,'गाय का दूध':70,'ऑर्गेनिक दही':80,'घी':1400,'छाछ':60,'सरसों का तेल':190};
+const prices={'गाय का दूध':70,'भैंस का दूध':80,'ऑर्गेनिक दही':80,'घी':1400,'छाछ':60,'सरसों का तेल':190};
 function pick(product){
 document.getElementById('product').value=product;
 document.getElementById('order').scrollIntoView({behavior:'smooth'});
@@ -105,10 +124,11 @@ e.preventDefault();
 const name=document.getElementById('name').value.trim();
 const product=document.getElementById('product').value;
 const qty=Number(document.getElementById('qty').value);
+const location=document.getElementById('location').value;
 const address=document.getElementById('address').value.trim();
-if(!name||!product||!address||qty<=0)return;
+if(!name||!product||!location||!address||qty<=0)return;
 const total=prices[product]*qty;
-const message='नमस्ते Ganga Organic Milk!%0Aनाम: '+encodeURIComponent(name)+'%0Aउत्पाद: '+encodeURIComponent(product)+'%0Aमात्रा: '+qty+'%0Aअनुमानित कुल: ₹'+total+'%0Aपता: '+encodeURIComponent(address);
+const message='नमस्ते Ganga Organic Milk!%0Aनाम: '+encodeURIComponent(name)+'%0Aउत्पाद: '+encodeURIComponent(product)+'%0Aमात्रा: '+qty+'%0Aअनुमानित कीमत: ₹'+total+'%0Aशहर: '+encodeURIComponent(location)+'%0Aपता: '+encodeURIComponent(address)+'%0Aडिलीवरी: Free Home Delivery';
 window.open('https://wa.me/918439282940?text='+message,'_blank');
 });
 </script>
