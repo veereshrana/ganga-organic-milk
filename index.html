@@ -207,5 +207,108 @@ document.getElementById("orderForm").addEventListener("submit", function(e){
 
 updateTotals();
 </script>
+  
+<!-- Ganga Organic Milk Customer Login -->
+<section id="customer-login" style="max-width:450px;margin:25px auto;padding:20px;background:#fff;border:1px solid #d6e5d9;border-radius:14px;font-family:Arial,sans-serif;">
+  <h2 style="color:#12633e;text-align:center;">ग्राहक लॉगिन</h2>
+  <p style="text-align:center;">अपने दूध का बिल और बकाया देखने के लिए लॉगिन करें।</p>
+  <label for="customer-phone">मोबाइल नंबर</label>
+  <input id="customer-phone" type="tel" placeholder="10 अंकों का मोबाइल नंबर" maxlength="10" style="width:100%;padding:12px;margin:10px 0;box-sizing:border-box;">
+  <div id="recaptcha-container"></div>
+  <button type="button" id="send-otp" style="width:100%;padding:12px;background:#12633e;color:white;border:0;border-radius:8px;">OTP भेजें</button>
+  <div id="otp-area" style="display:none;margin-top:15px;">
+    <label for="customer-otp">SMS में आया OTP</label>
+    <input id="customer-otp" type="text" inputmode="numeric" placeholder="OTP दर्ज करें" maxlength="6" style="width:100%;padding:12px;margin:10px 0;box-sizing:border-box;">
+    <button type="button" id="verify-otp" style="width:100%;padding:12px;background:#12633e;color:white;border:0;border-radius:8px;">OTP सत्यापित करें</button>
+  </div>
+  <p id="login-message" role="status"></p>
+</section>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+  getAuth,
+  RecaptchaVerifier,
+  signInWithPhoneNumber
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyB4q6feIy1qDS0ruodxqHdODGfkUw8Ei0g",
+  authDomain: "ganga-organic-milk.firebaseapp.com",
+  projectId: "ganga-organic-milk",
+  storageBucket: "ganga-organic-milk.firebasestorage.app",
+  messagingSenderId: "90671453623",
+  appId: "1:90671453623:web:402de6f130568295f18432",
+  measurementId: "G-86ZJQRNWJZ"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+let confirmationResult;
+let recaptchaVerifier;
+
+const message = document.getElementById("login-message");
+const otpArea = document.getElementById("otp-area");
+
+document.getElementById("send-otp").addEventListener("click", async () => {
+  const phone = document.getElementById("customer-phone").value.trim();
+
+  if (!/^[6-9]\d{9}$/.test(phone)) {
+    message.textContent = "कृपया सही 10 अंकों का भारतीय मोबाइल नंबर डालें।";
+    return;
+  }
+
+  try {
+    message.textContent = "OTP भेजने की तैयारी हो रही है...";
+
+    if (!recaptchaVerifier) {
+      recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha-container", {});
+    }
+
+    confirmationResult = await signInWithPhoneNumber(
+      auth,
+      "+91" + phone,
+      recaptchaVerifier
+    );
+
+    otpArea.style.display = "block";
+    message.textContent = "OTP भेज दिया गया है। SMS देखें।";
+  } catch (error) {
+    console.error(error);
+    message.textContent = "OTP नहीं भेजा गया। Firebase की सेटिंग जाँचें और दोबारा प्रयास करें।";
+
+    if (recaptchaVerifier) {
+      recaptchaVerifier.clear();
+      recaptchaVerifier = null;
+    }
+  }
+});
+
+document.getElementById("verify-otp").addEventListener("click", async () => {
+  const otp = document.getElementById("customer-otp").value.trim();
+
+  if (!confirmationResult) {
+    message.textContent = "पहले OTP मँगाएँ।";
+    return;
+  }
+
+  if (!/^\d{6}$/.test(otp)) {
+    message.textContent = "कृपया 6 अंकों का OTP डालें।";
+    return;
+  }
+
+  try {
+    await confirmationResult.confirm(otp);
+    message.textContent = "मोबाइल सत्यापित हो गया।";
+    document.getElementById("send-otp").disabled = true;
+    document.getElementById("verify-otp").disabled = true;
+  } catch (error) {
+    console.error(error);
+    message.textContent = "OTP गलत या समाप्त हो गया है। दोबारा प्रयास करें।";
+  }
+});
+</script>
+
 </body>
 </html>
