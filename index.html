@@ -4,261 +4,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0b512e">
-<title>Ganga Organic Milk Company</title>
+<meta name="theme-color" content="#075c3b">
+<title>Ganga Organic Milk | Fresh Milk</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f1f7ef;color:#183b29;line-height:1.6}
-header{background:linear-gradient(145deg,#07351f,#12834b);color:white;text-align:center;padding:28px 14px;border-radius:0 0 25px 25px}
-header h1{font-size:32px;margin:5px}
-.tagline{color:#ffdf76;font-size:19px;font-weight:bold}
-.free{display:inline-block;background:#fff0b3;color:#164c2a;padding:9px 15px;border-radius:25px;font-weight:bold;margin:12px}
-.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-.pill{border:1px solid #ffffff75;padding:7px 11px;border-radius:22px}
-h2{color:#07351f;text-align:center}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:760px;margin:18px auto;padding:12px}
-.card{background:white;border:1px solid #e0eade;border-radius:17px;padding:14px 11px;box-shadow:0 3px 12px #153f2710}
-.product-icon{font-size:35px}
-.card h3{margin:3px 0;font-size:17px}
-.price{font-size:20px;font-weight:bold;color:#0b512e}
-.unit{font-size:13px;color:#657567}
-label{display:block;font-weight:bold;margin-top:12px}
-.inp{width:100%;padding:12px;border:1.5px solid #d3dfd2;border-radius:10px;margin-top:6px;font-size:16px;background:white}
-.total{margin-top:10px;border-top:1px solid #edf0e9;padding-top:8px}
-.summary{max-width:760px;margin:10px 12px 25px;background:#e0f1df;padding:15px;border-radius:13px;text-align:center}
-.grand{font-size:23px;font-weight:bold;color:#0b512e}
-.panel{background:white;margin:24px auto;padding:20px 15px;border-radius:18px;max-width:550px;width:calc(100% - 24px);border:1px solid #dce8d9}
-button{width:100%;background:#128447;color:white;border:0;border-radius:12px;padding:14px;font-size:17px;font-weight:bold;margin-top:16px;cursor:pointer}
-.status{font-size:14px;overflow-wrap:anywhere}
-.note{text-align:center;font-size:12px;color:#657567}
-footer{background:#082b19;color:#dcebdd;text-align:center;padding:25px 14px}
-footer h3{color:#ffdf76}
-@media(max-width:350px){.grid{grid-template-columns:1fr}header h1{font-size:27px}}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f8f1;color:#183d2c}
+header{background:linear-gradient(135deg,#064e35,#15905a);color:white;text-align:center;padding:30px 15px}
+header h1{margin:0;font-size:30px}
+header p{margin:10px 0}
+.logo{font-size:48px}
+.delivery{background:#fff1bd;color:#674600;text-align:center;padding:13px;font-weight:bold;font-size:17px}
+section{padding:22px 15px;max-width:900px;margin:auto}
+h2{text-align:center;color:#08613d}
+.intro{text-align:center;line-height:1.7}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.product{background:white;padding:18px 10px;text-align:center;border-radius:16px;box-shadow:0 3px 12px #00000010;border:1px solid #e1eadf}
+.product .emoji{font-size:38px}
+.product h3{margin:8px 0;color:#185a3b;font-size:17px}
+.price{font-size:20px;font-weight:bold;color:#087746}
+.unit{font-size:13px;color:#666}
+.order{display:block;background:#087746;color:white;text-decoration:none;padding:12px 8px;border-radius:9px;margin-top:13px;font-weight:bold}
+.about{background:#e5f4e8;border-radius:15px;padding:20px;line-height:1.8}
+footer{background:#064e35;color:white;text-align:center;padding:24px 12px;line-height:1.8}
+footer a{color:#fff}
 </style>
 </head>
 <body>
 
 <header>
-  <div style="font-size:45px">🌿🥛</div>
-  <h1>Ganga Organic Milk</h1>
-  <div class="tagline">शुद्धता का भरोसा, हर घर तक!</div>
-  <div><span class="free">🚚 FREE HOME DELIVERY</span></div>
-  <p>चंदौसी, इस्लामनगर और आसपास के क्षेत्रों में होम डिलीवरी।</p>
-  <div class="pills">
-    <span class="pill">🥛 ताज़ा दूध</span>
-    <span class="pill">🧈 डेयरी उत्पाद</span>
-    <span class="pill">📲 आसान ऑर्डर</span>
-  </div>
+<div class="logo">🥛🐄</div>
+<h1>Ganga Organic Milk</h1>
+<p>ताज़ा दूध • शुद्धता • भरोसा</p>
+<p>आपके परिवार के लिए ताज़ा डेयरी उत्पाद</p>
 </header>
 
-<section style="padding:18px 12px;text-align:center">
-  <h2>🛒 हमारे उत्पाद</h2>
-  <p>मात्रा भरें, कीमत अपने आप जुड़ जाएगी।</p>
-  <div class="grid" id="products"></div>
-  <div class="summary">
-    <div>ऑर्डर की कुल कीमत</div>
-    <div class="grand" id="grandTotal">₹0</div>
-    <div class="unit">होम डिलीवरी शुल्क: ₹0</div>
-  </div>
+<div class="delivery">🚚 FREE HOME DELIVERY 🚚<br>
+चंदौसी और इस्लामनगर में</div>
+
+<section>
+<h2>हमारे उत्पाद</h2>
+<p class="intro">अपनी पसंद का उत्पाद चुनें और WhatsApp पर ऑर्डर भेजें।</p>
+
+<div class="products">
+
+<div class="product">
+<div class="emoji">🐄🥛</div>
+<h3>गाय का दूध</h3>
+<div class="price">₹70 <span class="unit">/ लीटर</span></div>
+<a class="order" href="https://wa.me/918439282940?text=Namaste%2C%20mujhe%20gay%20ka%20doodh%20chahiye">ऑर्डर करें</a>
+</div>
+
+<div class="product">
+<div class="emoji">🐃🥛</div>
+<h3>भैंस का दूध</h3>
+<div class="price">₹80 <span class="unit">/ लीटर</span></div>
+<a class="order" href="https://wa.me/918439282940?text=Namaste%2C%20mujhe%20bhains%20ka%20doodh%20chahiye">ऑर्डर करें</a>
+</div>
+
+<div class="product">
+<div class="emoji">🥣</div>
+<h3>ऑर्गेनिक दही</h3>
+<div class="price">₹80 <span class="unit">/ किलो</span></div>
+<a class="order" href="https://wa.me/918439282940?text=Namaste%2C%20mujhe%20dahi%20chahiye">ऑर्डर करें</a>
+</div>
+
+<div class="product">
+<div class="emoji">🧈</div>
+<h3>देसी घी</h3>
+<div class="price">₹1400 <span class="unit">/ किलो</span></div>
+<a class="order" href="https://wa.me/918439282940?text=Namaste%2C%20mujhe%20ghee%20chahiye">ऑर्डर करें</a>
+</div>
+
+<div class="product">
+<div class="emoji">🥤</div>
+<h3>छाछ</h3>
+<div class="price">₹60 <span class="unit">/ लीटर</span></div>
+<a class="order" href="https://wa.me/918439282940?text=Namaste%2C%20mujhe%20chhachh%20chahiye">ऑर्डर करें</a>
+</div>
+
+<div class="product">
+<div class="emoji">🌿</div>
+<h3>सरसों का तेल</h3>
+<div class="price">₹190 <span class="unit">/ किलो</span></div>
+<a class="order" href="https://wa.me/918439282940?text=Namaste%2C%20mujhe%20sarson%20ka%20tel%20chahiye">ऑर्डर करें</a>
+</div>
+
+</div>
 </section>
 
-<section class="panel">
-  <h2>📍 अपना पता लिखें</h2>
-  <form id="orderForm">
-    <label for="customerName">आपका नाम</label>
-    <input class="inp" id="customerName" required placeholder="अपना नाम">
-
-    <label for="orderPhone">मोबाइल नंबर</label>
-    <input class="inp" id="orderPhone" type="tel" inputmode="numeric" pattern="[0-9]{10}" required placeholder="10 अंकों का मोबाइल नंबर">
-
-    <label for="customerAddress">पूरा पता</label>
-    <textarea class="inp" id="customerAddress" rows="3" required placeholder="मकान नंबर, गली, मोहल्ला"></textarea>
-
-    <label for="deliveryArea">डिलीवरी क्षेत्र</label>
-    <select class="inp" id="deliveryArea" required>
-      <option value="">क्षेत्र चुनें</option>
-      <option>चंदौसी</option>
-      <option>इस्लामनगर</option>
-      <option>नौना</option>/option>
-      <option>अन्य नज़दीकी क्षेत्र</option>
-    </select>
-
-    <button type="submit">🟢 WhatsApp पर ऑर्डर भेजें</button>
-    <p class="note">WhatsApp में ऑर्डर जाँचकर Send दबाएँ।</p>
-  </form>
+<section>
+<h2>हमारे बारे में</h2>
+<div class="about">
+<strong>Ganga Organic Milk</strong> में आपका स्वागत है।<br>
+हमारा उद्देश्य ग्राहकों तक ताज़ा डेयरी उत्पाद पहुँचाना है।<br>
+✅ गाय और भैंस का दूध अलग-अलग<br>
+✅ उत्पादों की कीमत स्पष्ट<br>
+✅ चंदौसी और इस्लामनगर में होम डिलीवरी<br>
+✅ WhatsApp से आसान ऑर्डर
+</div>
 </section>
 
-<section class="panel" id="customer-login">
-  <h2>🔐 ग्राहक लॉगिन</h2>
-  <p>अपने मोबाइल नंबर से OTP द्वारा लॉगिन करें।</p>
-
-  <label for="loginPhone">मोबाइल नंबर</label>
-  <input class="inp" id="loginPhone" type="tel" inputmode="numeric" maxlength="10" placeholder="10 अंकों का मोबाइल नंबर">
-
-  <div id="recaptcha-container" style="margin-top:12px"></div>
-  <button type="button" id="sendOtp">OTP भेजें</button>
-
-  <div id="otpArea" hidden>
-    <label for="otpCode">SMS में आया OTP</label>
-    <input class="inp" id="otpCode" type="text" inputmode="numeric" maxlength="6" placeholder="6 अंकों का OTP">
-    <button type="button" id="verifyOtp">OTP सत्यापित करें</button>
-  </div>
-
-  <p class="status" id="loginStatus" role="status" aria-live="polite">लॉगिन के लिए अपना मोबाइल नंबर डालें।</p>
-  <p class="note">OTP किसी दूसरे व्यक्ति को न बताएँ।</p>
+<section style="text-align:center">
+<h2>ऑर्डर या संपर्क करें</h2>
+<p>अपना ऑर्डर WhatsApp पर भेजें।</p>
+<a class="order" style="max-width:320px;margin:15px auto;background:#168b46"
+href="https://wa.me/918439282940?text=Namaste%2C%20Ganga%20Organic%20Milk%20se%20order%20karna%20hai">
+📲 WhatsApp पर ऑर्डर करें
+</a>
 </section>
 
 <footer>
-  <h3>🏢 Ganga Organic Milk Company</h3>
-  <p>Village - Nauna, Tehsil - Bisauli<br>District - Badaun, Uttar Pradesh - 202523</p>
-  <p>🚚 FREE HOME DELIVERY: Chandausi, Islamnagar, Nauna & Nearby</p>
-  <p>© 2026 Ganga Organic Milk Company</p>
+<strong>Ganga Organic Milk</strong><br>
+ताज़गी आपके घर तक ❤️<br>
+सेवा क्षेत्र: चंदौसी और इस्लामनगर<br>
+WhatsApp: +91 84392 82940
 </footer>
-
-<script>
-const products=[
- {id:"cow",name:"गाय का दूध",icon:"🐄",price:70,unit:"लीटर"},
- {id:"buffalo",name:"भैंस का दूध",icon:"🐃",price:80,unit:"लीटर"},
- {id:"ghee",name:"देसी घी",icon:"🧈",price:1400,unit:"किलो"},
- {id:"buttermilk",name:"छाछ",icon:"🥛",price:40,unit:"लीटर"},
- {id:"curd",name:"दही",icon:"🥣",price:70,unit:"किलो"},
- {id:"paneer",name:"पनीर",icon:"🧀",price:450,unit:"किलो"}
-];
-const quantities={};
-const productBox=document.getElementById("products");
-function money(n){return "₹"+n.toLocaleString("en-IN",{maximumFractionDigits:2})}
-
-products.forEach(p=>{
- quantities[p.id]=0;
- const card=document.createElement("article");
- card.className="card";
- card.innerHTML=`
- <div class="product-icon">${p.icon}</div>
- <h3>${p.name}</h3>
- <div class="price">${money(p.price)} <span class="unit">/ ${p.unit}</span></div>
- <label for="${p.id}Qty">मात्रा (${p.unit})</label>
- <input class="inp" id="${p.id}Qty" type="number" min="0" step="0.5" value="0" inputmode="decimal">
- <div class="total">कुल: <b id="${p.id}Total">₹0</b></div>`;
- productBox.appendChild(card);
- document.getElementById(p.id+"Qty").addEventListener("input",updateTotals);
-});
-
-function updateTotals(){
- let grand=0;
- products.forEach(p=>{
-  const q=Math.max(0,Number(document.getElementById(p.id+"Qty").value)||0);
-  quantities[p.id]=q;
-  const total=q*p.price;
-  grand+=total;
-  document.getElementById(p.id+"Total").textContent=money(total);
- });
- document.getElementById("grandTotal").textContent=money(grand);
-}
-
-document.getElementById("orderForm").addEventListener("submit",function(e){
- e.preventDefault();
- const selected=products.filter(p=>quantities[p.id]>0);
- if(!selected.length){alert("कृपया उत्पाद और मात्रा चुनें।");return}
- const name=document.getElementById("customerName").value.trim();
- const phone=document.getElementById("orderPhone").value.trim();
- const address=document.getElementById("customerAddress").value.trim();
- const area=document.getElementById("deliveryArea").value;
- const lines=selected.map(p=>p.name+": "+quantities[p.id]+" "+p.unit+" × "+money(p.price)+" = "+money(quantities[p.id]*p.price));
- const total=selected.reduce((sum,p)=>sum+quantities[p.id]*p.price,0);
- const message="नमस्ते Ganga Organic Milk! मुझे ऑर्डर देना है।\n\nनाम: "+name+"\nमोबाइल: "+phone+"\nपता: "+address+"\nक्षेत्र: "+area+"\n\n"+lines.join("\n")+"\n\nडिलीवरी शुल्क: ₹0\nकुल कीमत: "+money(total);
- window.open("https://wa.me/918439282940?text="+encodeURIComponent(message),"_blank");
-});
-updateTotals();
-</script>
-
-<script type="module">
-import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import {getAuth,RecaptchaVerifier,signInWithPhoneNumber} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-const firebaseConfig={
- apiKey:"AIzaSyB4q6feIy1qDS0ruodxqHdODGfkUw8Ei0g",
- authDomain:"ganga-organic-milk.firebaseapp.com",
- projectId:"ganga-organic-milk",
- storageBucket:"ganga-organic-milk.firebasestorage.app",
- messagingSenderId:"90671453623",
- appId:"1:90671453623:web:402de6f130568295f18432",
- measurementId:"G-86ZJQRNWJZ"
-};
-
-const statusEl=document.getElementById("loginStatus");
-const sendButton=document.getElementById("sendOtp");
-const verifyButton=document.getElementById("verifyOtp");
-const otpArea=document.getElementById("otpArea");
-let auth,recaptchaVerifier,confirmationResult;
-
-function showStatus(message){statusEl.textContent=message}
-
-try{
- const app=initializeApp(firebaseConfig);
- auth=getAuth(app);
- auth.useDeviceLanguage();
-}catch(error){
- console.error(error);
- showStatus("Firebase शुरू नहीं हुआ। पेज रिफ्रेश करें और सेटिंग जाँचें।");
-}
-
-sendButton.addEventListener("click",async()=>{
- const phone=document.getElementById("loginPhone").value.trim();
- if(!/^[6-9]\d{9}$/.test(phone)){
-  showStatus("सही 10 अंकों का भारतीय मोबाइल नंबर डालें।");
-  return;
- }
- if(!auth){showStatus("Firebase शुरू नहीं हुआ। पेज रिफ्रेश करें।");return}
-
- sendButton.disabled=true;
- showStatus("reCAPTCHA और OTP की जाँच हो रही है...");
- try{
-  if(recaptchaVerifier){recaptchaVerifier.clear();recaptchaVerifier=null}
-  recaptchaVerifier=new RecaptchaVerifier(auth,"recaptcha-container",{
-   size:"normal",
-   callback:()=>showStatus("सत्यापन पूरा हुआ। OTP भेजा जा रहा है..."),
-   "expired-callback":()=>showStatus("सत्यापन समाप्त हुआ। दोबारा प्रयास करें।")
-  });
-  await recaptchaVerifier.render();
-  confirmationResult=await signInWithPhoneNumber(auth,"+91"+phone,recaptchaVerifier);
-  otpArea.hidden=false;
-  showStatus("OTP भेजने का अनुरोध सफल हुआ। SMS देखें।");
- }catch(error){
-  console.error("Firebase phone sign-in error:",error);
-  const code=error&&error.code?error.code:"";
-  const messages={
-   "auth/invalid-phone-number":"मोबाइल नंबर सही नहीं है।",
-   "auth/operation-not-allowed":"Firebase में Phone sign-in चालू करें।",
-   "auth/unauthorized-domain":"Authorized domains में veereshrana.github.io जोड़ें।",
-   "auth/too-many-requests":"बहुत प्रयास हो चुके हैं। कुछ समय बाद कोशिश करें।",
-   "auth/quota-exceeded":"SMS सीमा पूरी हो सकती है। Firebase Console जाँचें।",
-   "auth/captcha-check-failed":"reCAPTCHA विफल हुआ। पेज रिफ्रेश करें।",
-   "auth/network-request-failed":"इंटरनेट कनेक्शन जाँचें।"
-  };
-  showStatus((messages[code]||"OTP नहीं भेजा गया। Firebase सेटिंग जाँचें।")+(code?" ("+code+")":""));
-  if(recaptchaVerifier){try{recaptchaVerifier.clear()}catch(e){}recaptchaVerifier=null}
- }finally{
-  sendButton.disabled=false;
- }
-});
-
-verifyButton.addEventListener("click",async()=>{
- const otp=document.getElementById("otpCode").value.trim();
- if(!confirmationResult){showStatus("पहले OTP भेजें।");return}
- if(!/^\d{6}$/.test(otp)){showStatus("6 अंकों का OTP डालें।");return}
- verifyButton.disabled=true;
- try{
-  const result=await confirmationResult.confirm(otp);
-  showStatus("मोबाइल सत्यापित हो गया: "+(result.user.phoneNumber||"")+". दूध का बिल दिखाने के लिए सुरक्षित Firestore सेटिंग और ग्राहक रिकॉर्ड जोड़ना अभी बाकी है।");
-  sendButton.disabled=true;
-  verifyButton.disabled=true;
- }catch(error){
-  console.error(error);
-  showStatus("OTP सत्यापित नहीं हुआ। सही OTP डालें।"+(error&&error.code?" ("+error.code+")":""));
-  verifyButton.disabled=false;
- }
-});
-</script>
 
 </body>
 </html>
