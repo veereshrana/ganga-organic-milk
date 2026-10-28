@@ -346,6 +346,33 @@ document.getElementById("khata-verify-otp").addEventListener("click", async () =
   }
 });
 </script>
+<section id="customer-section">
+  <h2>🥛 Ganga Organic Milk</h2>
+  <h3>नया ग्राहक जोड़ें</h3>
+
+  <form id="customer-form">
+    <input id="customer-name"
+      placeholder="ग्राहक का नाम" required />
+
+    <input id="customer-phone"
+      placeholder="मोबाइल नंबर" type="tel" />
+
+    <select id="milk-type" required>
+      <option value="cow">गाय का दूध</option>
+      <option value="buffalo">भैंस का दूध</option>
+    </select>
+
+    <input id="milk-rate" type="number"
+      min="1" value="70" placeholder="रेट प्रति लीटर" required />
+
+    <button type="submit">ग्राहक सेव करें</button>
+  </form>
+
+  <p id="customer-message"></p>
+  <h3>ग्राहकों की सूची</h3>
+  <div id="customer-list"></div>
+</section>
+  
 
 </body>
 </html>
