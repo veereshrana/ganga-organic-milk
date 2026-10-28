@@ -266,6 +266,86 @@ document.getElementById("orderForm").addEventListener("submit", function(event) 
 document.getElementById("year").textContent = new Date().getFullYear();
 calculateTotal();
 </script>
+  
+<section id="khata-login" style="max-width:500px;margin:25px auto;padding:20px;background:#fff;border-radius:14px;box-shadow:0 2px 10px #0001">
+  <h2 style="text-align:center;color:#08613d">🥛 ग्राहक खाता लॉगिन</h2>
+  <p>अपना मोबाइल नंबर डालकर OTP से लॉगिन करें।</p>
+
+  <label for="khata-phone">मोबाइल नंबर</label>
+  <input id="khata-phone" type="tel" inputmode="numeric" placeholder="10 अंकों का मोबाइल नंबर" maxlength="10">
+
+  <div id="khata-recaptcha"></div>
+  <button id="khata-send-otp" type="button">OTP भेजें</button>
+
+  <div id="khata-otp-area" style="display:none">
+    <label for="khata-otp">OTP डालें</label>
+    <input id="khata-otp" type="text" inputmode="numeric" maxlength="6" placeholder="6 अंकों का OTP">
+    <button id="khata-verify-otp" type="button">लॉगिन करें</button>
+  </div>
+
+  <p id="khata-message" role="status" style="overflow-wrap:anywhere"></p>
+</section>
+
+<script type="module">
+import { initializeApp, getApp, getApps } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
+import {
+  getAuth, RecaptchaVerifier, signInWithPhoneNumber
+} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBRzBe_QyWuRwNfoXKy3wkLeo6t-PgLAis",
+  authDomain: "ganga-organic-milk-khata.firebaseapp.com",
+  projectId: "ganga-organic-milk-khata",
+  storageBucket: "ganga-organic-milk-khata.firebasestorage.app",
+  messagingSenderId: "893561047797",
+  appId: "1:893561047797:web:f7f9bf633ad7b547d4d3bc"
+};
+
+const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const message = document.getElementById("khata-message");
+let confirmation = null;
+let recaptcha = null;
+
+document.getElementById("khata-send-otp").addEventListener("click", async () => {
+  const phone = document.getElementById("khata-phone").value.trim();
+  if (!/^[6-9]\d{9}$/.test(phone)) {
+    message.textContent = "कृपया सही 10 अंकों का भारतीय मोबाइल नंबर डालें।";
+    return;
+  }
+
+  try {
+    message.textContent = "OTP भेजने की कोशिश हो रही है...";
+    if (!recaptcha) {
+      recaptcha = new RecaptchaVerifier(auth, "khata-recaptcha", {});
+    }
+    confirmation = await signInWithPhoneNumber(auth, "+91" + phone, recaptcha);
+    document.getElementById("khata-otp-area").style.display = "block";
+    message.textContent = "OTP भेज दिया गया है। अपना संदेश जाँचें।";
+  } catch (error) {
+    message.textContent = "OTP नहीं भेजा जा सका: " + error.message;
+    if (recaptcha) {
+      try { await recaptcha.clear(); } catch (_) {}
+      recaptcha = null;
+    }
+  }
+});
+
+document.getElementById("khata-verify-otp").addEventListener("click", async () => {
+  const otp = document.getElementById("khata-otp").value.trim();
+  if (!confirmation || !/^\d{6}$/.test(otp)) {
+    message.textContent = "पहले OTP मँगाएँ और 6 अंकों का कोड डालें।";
+    return;
+  }
+  try {
+    const result = await confirmation.confirm(otp);
+    message.textContent = "लॉगिन सफल! UID: " + result.user.uid +
+      "। अभी ग्राहक का हिसाब जोड़ना बाकी है।";
+  } catch (_) {
+    message.textContent = "OTP गलत या समाप्त हो गया है। फिर से कोशिश करें।";
+  }
+});
+</script>
 
 </body>
 </html>
