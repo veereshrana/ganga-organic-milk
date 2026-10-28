@@ -3,168 +3,218 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ganga Organic Milk | शुद्ध दूध और डेयरी उत्पाद</title>
-<meta name="description" content="Ganga Organic Milk - चंदौसी और इस्लामनगर में गाय का दूध, भैंस का दूध, दही, घी, छाछ और सरसों तेल। फ्री होम डिलीवरी।">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08613d">
+<title>Ganga Organic Milk | ग्राहक खाता और ऑर्डर</title>
+<meta name="description" content="Ganga Organic Milk - चंदौसी और इस्लामनगर में दूध, दही, घी और डेयरी उत्पाद।">
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f4f8ef;color:#20382a;line-height:1.6}
-header{background:linear-gradient(135deg,#064e38,#168052);color:white;text-align:center;padding:30px 16px}
-header h1{font-size:32px;margin:0}
-header p{margin:8px 0}
-.tag{display:inline-block;background:#fff;color:#08613d;padding:7px 15px;border-radius:30px;font-weight:bold;margin-top:8px}
-nav{background:#fff;padding:12px;text-align:center;position:sticky;top:0;z-index:5;box-shadow:0 2px 8px #0001}
-nav a{color:#08613d;text-decoration:none;font-weight:bold;margin:0 8px;font-size:14px}
-section{padding:24px 14px;max-width:1000px;margin:auto}
-h2{text-align:center;color:#08613d;margin-top:0}
-.intro{text-align:center}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:14px}
-.product{background:white;border-radius:14px;padding:18px 12px;text-align:center;box-shadow:0 3px 12px #0000000d;border:1px solid #e1eadf}
-.product .emoji{font-size:38px}
-.product h3{margin:8px 0;color:#135c3d}
-.price{font-size:21px;font-weight:bold;color:#087747}
-.small{font-size:13px;color:#5b6b60}
-.panel{background:white;padding:18px;border-radius:14px;box-shadow:0 3px 12px #0000000d;margin-top:12px}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f8f1;color:#20382a;line-height:1.55}
+header{background:linear-gradient(135deg,#064e38,#168052);color:white;text-align:center;padding:25px 14px}
+header h1{margin:0;font-size:29px}
+header p{margin:6px 0}
+nav{position:sticky;top:0;z-index:5;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;background:white;padding:12px;box-shadow:0 2px 8px #0001}
+nav a{color:#08613d;text-decoration:none;font-size:14px;font-weight:bold}
+section{max-width:760px;margin:auto;padding:20px 13px}
+h2{color:#08613d;text-align:center;margin-top:0}
+h3{color:#135c3d}
+.panel{background:white;border-radius:14px;padding:17px;margin:12px 0;box-shadow:0 3px 12px #0000000b}
 label{display:block;font-weight:bold;margin:12px 0 5px}
-input,select,textarea{width:100%;padding:12px;border:1px solid #cbd8cb;border-radius:8px;font-size:16px;background:#fff}
-.qtyrow{display:grid;grid-template-columns:1fr 105px;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #edf0ea}
-.qtyrow input{max-width:105px}
-button,.btn{display:block;width:100%;border:0;border-radius:9px;padding:13px 16px;background:#087747;color:white;font-size:16px;font-weight:bold;text-align:center;text-decoration:none;cursor:pointer;margin-top:14px}
-.whatsapp{background:#159b50}
-.appbtn{background:#174d39}
-.total{background:#edf8ee;padding:14px;border-radius:10px;font-size:20px;font-weight:bold;text-align:center;margin-top:16px}
-.notice{text-align:center;background:#e3f5e5;color:#145c35;padding:12px;font-weight:bold}
-footer{background:#073e2d;color:white;text-align:center;padding:22px 12px;margin-top:20px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #cbd8cb;border-radius:9px;background:white;font-size:16px;color:#20382a}
+button,.btn{display:block;width:100%;border:0;border-radius:9px;padding:13px;margin-top:12px;background:#087747;color:white;font-size:16px;font-weight:bold;text-align:center;text-decoration:none;cursor:pointer}
+button:disabled{opacity:.6}
+.green{background:#159b50}
+.gray{background:#56665c}
+.notice{background:#e3f5e5;text-align:center;padding:11px;color:#145c35;font-weight:bold}
+.small{font-size:13px;color:#607064}
+.row{display:grid;grid-template-columns:1fr 110px;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #edf0ea}
+.price{font-size:14px;color:#087747}
+.total{background:#edf8ee;border-radius:10px;padding:13px;text-align:center;font-weight:bold;font-size:19px;margin-top:14px}
+.hidden{display:none!important}
+.status{overflow-wrap:anywhere;font-size:14px}
+.item{padding:12px 0;border-bottom:1px solid #e6ece4}
+.item strong{color:#135c3d}
+.pill{display:inline-block;padding:4px 9px;border-radius:20px;background:#e5f5e7;color:#145c35;font-size:12px}
+footer{background:#073e2d;color:white;text-align:center;padding:22px 12px}
 footer a{color:white}
-@media(min-width:700px){header h1{font-size:42px}.products{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body>
-
 <header>
   <h1>🥛 Ganga Organic Milk</h1>
   <p>शुद्धता का विश्वास, आपके परिवार के साथ</p>
-  <div class="tag">🚚 FREE HOME DELIVERY</div>
+  <p>🚚 FREE HOME DELIVERY</p>
   <p>📍 चंदौसी और इस्लामनगर</p>
-  <p>ताज़ा दूध और डेयरी उत्पाद आपके घर तक</p>
 </header>
 
 <nav>
   <a href="#products">उत्पाद</a>
-  <a href="#order">ऑर्डर करें</a>
-  <a href="#about">हमारे बारे में</a>
+  <a href="#order">ऑर्डर</a>
+  <a href="#khata-login">खाता लॉगिन</a>
+  <a href="#customer-section">ग्राहक हिसाब</a>
   <a href="#contact">संपर्क</a>
 </nav>
 
-<div class="notice">🎉 होम डिलीवरी बिल्कुल मुफ्त — ऑर्डर WhatsApp पर भेजें</div>
+<div class="notice">🎉 होम डिलीवरी मुफ्त — ऑर्डर WhatsApp पर भेजें</div>
 
 <section id="products">
-  <h2>हमारे उत्पाद</h2>
-  <p class="intro">अपनी पसंद का उत्पाद चुनें और नीचे ऑर्डर फॉर्म भरें।</p>
-  <div class="products">
-    <div class="product">
-      <div class="emoji">🥛</div>
-      <h3>गाय का दूध</h3>
-      <div class="price">₹70 / लीटर</div>
-      <p class="small">ताज़ा दूध</p>
-    </div>
-    <div class="product">
-      <div class="emoji">🐃</div>
-      <h3>भैंस का दूध</h3>
-      <div class="price">₹80 / लीटर</div>
-      <p class="small">ताज़ा दूध</p>
-    </div>
-    <div class="product">
-      <div class="emoji">🥣</div>
-      <h3>ऑर्गेनिक दही</h3>
-      <div class="price">₹80 / किलो</div>
-    </div>
-    <div class="product">
-      <div class="emoji">🫙</div>
-      <h3>देसी घी</h3>
-      <div class="price">₹1400 / किलो</div>
-    </div>
-    <div class="product">
-      <div class="emoji">🥤</div>
-      <h3>छाछ</h3>
-      <div class="price">₹60 / लीटर</div>
-    </div>
-    <div class="product">
-      <div class="emoji">🌿</div>
-      <h3>सरसों का तेल</h3>
-      <div class="price">₹190 / किलो</div>
-    </div>
-  </div>
+<h2>हमारे उत्पाद</h2>
+<div class="panel">
+  <div class="item">🥛 <strong>गाय का दूध</strong><br>₹70 प्रति लीटर</div>
+  <div class="item">🐃 <strong>भैंस का दूध</strong><br>₹80 प्रति लीटर</div>
+  <div class="item">🥣 <strong>दही</strong><br>₹80 प्रति किलो</div>
+  <div class="item">🫙 <strong>देसी घी</strong><br>₹1400 प्रति किलो</div>
+  <div class="item">🥤 <strong>छाछ</strong><br>₹60 प्रति लीटर</div>
+  <div class="item">🌿 <strong>सरसों का तेल</strong><br>₹190 प्रति किलो</div>
+</div>
 </section>
 
 <section id="order">
-  <h2>🛒 अपना ऑर्डर बुक करें</h2>
-  <p class="intro">अपनी जानकारी और मात्रा भरें। ऑर्डर WhatsApp पर भेजने से पहले विवरण देख लें।</p>
+<h2>🛒 WhatsApp ऑर्डर</h2>
+<div class="panel">
+<form id="orderForm">
+  <label for="orderName">ग्राहक का नाम *</label>
+  <input id="orderName" required placeholder="अपना नाम">
+  <label for="orderPhone">मोबाइल नंबर *</label>
+  <input id="orderPhone" type="tel" inputmode="numeric" maxlength="10" pattern="[0-9]{10}" required placeholder="10 अंकों का नंबर">
+  <label for="orderArea">गाँव / मोहल्ला *</label>
+  <input id="orderArea" required placeholder="अपना क्षेत्र">
+  <label for="orderAddress">पूरा पता *</label>
+  <textarea id="orderAddress" required rows="2" placeholder="मकान नंबर और गली"></textarea>
+  <label for="orderProduct">उत्पाद चुनें</label>
+  <select id="orderProduct">
+    <option value="cow">🥛 गाय का दूध — ₹70/लीटर</option>
+    <option value="buffalo">🐃 भैंस का दूध — ₹80/लीटर</option>
+    <option value="curd">🥣 दही — ₹80/किलो</option>
+    <option value="ghee">🫙 घी — ₹1400/किलो</option>
+    <option value="buttermilk">🥤 छाछ — ₹60/लीटर</option>
+    <option value="oil">🌿 सरसों का तेल — ₹190/किलो</option>
+  </select>
+  <label for="orderQty">मात्रा</label>
+  <input id="orderQty" type="number" min="0.25" max="1000" step="0.25" value="1" required>
+  <label for="orderDelivery">डिलीवरी का समय</label>
+  <select id="orderDelivery">
+    <option>सुबह</option><option>दोपहर</option><option>शाम</option>
+  </select>
+  <label for="orderNotes">अन्य जानकारी (वैकल्पिक)</label>
+  <textarea id="orderNotes" rows="2" placeholder="कोई विशेष निर्देश"></textarea>
+  <div class="total">कुल कीमत: ₹<span id="orderTotal">70</span><br><span class="small">होम डिलीवरी मुफ्त</span></div>
+  <button type="submit" class="green">WhatsApp पर ऑर्डर भेजें</button>
+</form>
+</div>
+</section>
 
-  <div class="panel">
-    <form id="orderForm">
-      <label for="customer">ग्राहक का नाम *</label>
-      <input id="customer" required placeholder="अपना पूरा नाम लिखें">
-
-      <label for="mobile">मोबाइल नंबर *</label>
-      <input id="mobile" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required placeholder="10 अंकों का मोबाइल नंबर">
-
-      <label for="area">गाँव / मोहल्ला *</label>
-      <input id="area" required placeholder="चंदौसी या इस्लामनगर के पास अपना क्षेत्र">
-
-      <label for="address">पूरा पता और मकान नंबर *</label>
-      <textarea id="address" required rows="2" placeholder="मकान नंबर, गली और पहचान"></textarea>
-
-      <label for="pin">पिन कोड</label>
-      <input id="pin" inputmode="numeric" maxlength="6" placeholder="6 अंकों का पिन कोड">
-
-      <h3>उत्पाद की मात्रा</h3>
-      <p class="small">जो उत्पाद चाहिए, उसकी मात्रा भरें। बाकी खाली या शून्य रहने दें।</p>
-
-      <div class="qtyrow"><div>🥛 गाय का दूध<br><span class="small">₹70 प्रति लीटर</span></div><input id="cow" type="number" min="0" max="1000" step="0.5" value="0" aria-label="गाय का दूध लीटर"></div>
-      <div class="qtyrow"><div>🐃 भैंस का दूध<br><span class="small">₹80 प्रति लीटर</span></div><input id="buffalo" type="number" min="0" max="1000" step="0.5" value="0" aria-label="भैंस का दूध लीटर"></div>
-      <div class="qtyrow"><div>🥣 दही<br><span class="small">₹80 प्रति किलो</span></div><input id="curd" type="number" min="0" max="1000" step="0.5" value="0" aria-label="दही किलो"></div>
-      <div class="qtyrow"><div>🫙 घी<br><span class="small">₹1400 प्रति किलो</span></div><input id="ghee" type="number" min="0" max="1000" step="0.25" value="0" aria-label="घी किलो"></div>
-      <div class="qtyrow"><div>🥤 छाछ<br><span class="small">₹60 प्रति लीटर</span></div><input id="buttermilk" type="number" min="0" max="1000" step="0.5" value="0" aria-label="छाछ लीटर"></div>
-      <div class="qtyrow"><div>🌿 सरसों का तेल<br><span class="small">₹190 प्रति किलो</span></div><input id="oil" type="number" min="0" max="1000" step="0.5" value="0" aria-label="सरसों का तेल किलो"></div>
-
-      <label for="delivery">डिलीवरी का पसंदीदा समय</label>
-      <select id="delivery">
-        <option>सुबह</option>
-        <option>दोपहर</option>
-        <option>शाम</option>
-      </select>
-
-      <label for="notes">अन्य जानकारी (वैकल्पिक)</label>
-      <textarea id="notes" rows="2" placeholder="जैसे रोज़ाना डिलीवरी या कोई खास निर्देश"></textarea>
-
-      <div class="total">कुल उत्पाद कीमत: ₹<span id="total">0</span><br><span class="small">होम डिलीवरी मुफ्त</span></div>
-
-      <button type="submit" class="whatsapp">WhatsApp पर ऑर्डर भेजें</button>
-    </form>
+<section id="khata-login">
+<h2>🔐 ग्राहक खाता लॉगिन</h2>
+<div class="panel">
+  <p>अपना भारतीय मोबाइल नंबर डालकर OTP से लॉगिन करें।</p>
+  <div id="loginForm">
+    <label for="khata-phone">मोबाइल नंबर</label>
+    <div style="display:flex;gap:7px;align-items:center">
+      <span>+91</span>
+      <input id="khata-phone" type="tel" inputmode="numeric" maxlength="10" placeholder="10 अंकों का नंबर">
+    </div>
+    <div id="khata-recaptcha"></div>
+    <button id="khata-send-otp" type="button">OTP भेजें</button>
+    <div id="khata-otp-area" class="hidden">
+      <label for="khata-otp">SMS से आया OTP</label>
+      <input id="khata-otp" type="text" inputmode="numeric" maxlength="6" autocomplete="one-time-code" placeholder="6 अंकों का OTP">
+      <button id="khata-verify-otp" type="button">लॉगिन करें</button>
+    </div>
   </div>
+  <p id="khata-message" class="status" role="status"></p>
+  <button id="khata-logout" class="gray hidden" type="button">लॉगआउट</button>
+</div>
+</section>
+
+<section id="customer-section">
+<h2>📒 ग्राहक का हिसाब</h2>
+<div class="panel">
+  <p class="small">पहले OTP से लॉगिन करें। ग्राहक और भुगतान का डेटा Firebase में सेव होगा।</p>
+  <div id="khata-app" class="hidden">
+    <p id="signed-user" class="small"></p>
+    <h3>नया ग्राहक जोड़ें</h3>
+    <form id="customer-form">
+      <label for="customer-name">ग्राहक का नाम *</label>
+      <input id="customer-name" required maxlength="100" placeholder="ग्राहक का नाम">
+      <label for="customer-phone">ग्राहक का मोबाइल नंबर</label>
+      <input id="customer-phone" type="tel" inputmode="numeric" maxlength="10" placeholder="10 अंकों का नंबर">
+      <label for="milk-type">मुख्य उत्पाद</label>
+      <select id="milk-type">
+        <option value="cow">गाय का दूध</option>
+        <option value="buffalo">भैंस का दूध</option>
+        <option value="curd">दही</option>
+        <option value="ghee">घी</option>
+        <option value="buttermilk">छाछ</option>
+        <option value="oil">सरसों का तेल</option>
+      </select>
+      <label for="milk-rate">रेट (₹ प्रति लीटर / किलो)</label>
+      <input id="milk-rate" type="number" min="1" max="100000" value="70" required>
+      <button type="submit">ग्राहक सेव करें</button>
+    </form>
+    <p id="customer-message" class="status" role="status"></p>
+
+    <h3>रोज़ की दूध / उत्पाद एंट्री</h3>
+    <form id="entry-form">
+      <label for="entry-customer">ग्राहक चुनें</label>
+      <select id="entry-customer" required></select>
+      <label for="entry-date">तारीख</label>
+      <input id="entry-date" type="date" required>
+      <label for="entry-product">उत्पाद</label>
+      <select id="entry-product">
+        <option value="cow">गाय का दूध</option>
+        <option value="buffalo">भैंस का दूध</option>
+        <option value="curd">दही</option>
+        <option value="ghee">घी</option>
+        <option value="buttermilk">छाछ</option>
+        <option value="oil">सरसों का तेल</option>
+      </select>
+      <label for="entry-qty">मात्रा (लीटर / किलो)</label>
+      <input id="entry-qty" type="number" min="0.25" max="1000" step="0.25" required placeholder="जैसे 1.5">
+      <label for="entry-rate">रेट (₹ प्रति लीटर / किलो)</label>
+      <input id="entry-rate" type="number" min="1" max="100000" required>
+      <button type="submit">दूध की एंट्री सेव करें</button>
+    </form>
+    <p id="entry-message" class="status" role="status"></p>
+
+    <h3>ग्राहक से भुगतान प्राप्त करें</h3>
+    <form id="payment-form">
+      <label for="payment-customer">ग्राहक चुनें</label>
+      <select id="payment-customer" required></select>
+      <label for="payment-amount">जमा राशि (₹)</label>
+      <input id="payment-amount" type="number" min="1" max="10000000" step="0.01" required>
+      <label for="payment-date">भुगतान की तारीख</label>
+      <input id="payment-date" type="date" required>
+      <label for="payment-note">नोट (वैकल्पिक)</label>
+      <input id="payment-note" maxlength="200" placeholder="जैसे नकद / UPI">
+      <button type="submit">भुगतान सेव करें</button>
+    </form>
+    <p id="payment-message" class="status" role="status"></p>
+
+    <h3>ग्राहकों की सूची और बकाया</h3>
+    <div id="customer-list"></div>
+    <h3>दूध और भुगतान का रिकॉर्ड</h3>
+    <div id="ledger-list"></div>
+  </div>
+</div>
 </section>
 
 <section id="about">
-  <h2>हमारे बारे में</h2>
-  <div class="panel">
-    <p><strong>Ganga Organic Milk</strong> का उद्देश्य ग्राहकों तक दूध और डेयरी उत्पाद सुविधाजनक तरीके से पहुँचाना है।</p>
-    <p>✅ गाय और भैंस के दूध के अलग-अलग विकल्प</p>
-    <p>✅ दही, घी, छाछ और सरसों का तेल</p>
-    <p>✅ चंदौसी और इस्लामनगर क्षेत्र में होम डिलीवरी उपलब्धता के अनुसार</p>
-    <p>✅ ऑर्डर WhatsApp पर भेजने की सुविधा</p>
-  </div>
+<h2>हमारे बारे में</h2>
+<div class="panel">
+  <p><strong>Ganga Organic Milk</strong> — ताज़ा दूध और डेयरी उत्पाद, चंदौसी और इस्लामनगर क्षेत्र में।</p>
+  <p>🚚 होम डिलीवरी की सुविधा उपलब्धता के अनुसार।</p>
+</div>
 </section>
 
 <section id="contact">
-  <h2>संपर्क करें</h2>
-  <div class="panel">
-    <p>📍 सेवा क्षेत्र: चंदौसी और इस्लामनगर</p>
-    <p>📱 WhatsApp: +91 84392 82940</p>
-    <a class="btn whatsapp" href="https://wa.me/918439282940" target="_blank" rel="noopener">WhatsApp पर संपर्क करें</a>
-    <a class="btn appbtn" href="https://drive.google.com/file/d/1W4SEvbCg53gFNTXlLTv8_ZqkhmlPRT0-/view?usp=drivesdk" target="_blank" rel="noopener">📲 Ganga Organic Milk ऐप देखें</a>
-    <p class="small">ऐप लिंक Google Drive पर खुलता है। फ़ाइल उपलब्ध होना और इंस्टॉल होना उसकी शेयरिंग सेटिंग तथा आपके फोन की सुरक्षा सेटिंग पर निर्भर करेगा।</p>
-  </div>
+<h2>संपर्क करें</h2>
+<div class="panel">
+  <p>📍 सेवा क्षेत्र: चंदौसी और इस्लामनगर</p>
+  <p>📱 WhatsApp: +91 84392 82940</p>
+  <a class="btn green" href="https://wa.me/918439282940" target="_blank" rel="noopener">WhatsApp पर संपर्क करें</a>
+  <a class="btn" href="https://drive.google.com/file/d/1W4SEvbCg53gFNTXlLTv8_ZqkhmlPRT0-/view?usp=drivesdk" target="_blank" rel="noopener">📲 Ganga Organic Milk ऐप देखें</a>
+</div>
 </section>
 
 <footer>
@@ -174,205 +224,279 @@ footer a{color:white}
 </footer>
 
 <script>
-const prices = {
-  cow: 70,
-  buffalo: 80,
-  curd: 80,
-  ghee: 1400,
-  buttermilk: 60,
-  oil: 190
+const orderProducts = {
+  cow:{name:"गाय का दूध",price:70,unit:"लीटर"},
+  buffalo:{name:"भैंस का दूध",price:80,unit:"लीटर"},
+  curd:{name:"दही",price:80,unit:"किलो"},
+  ghee:{name:"घी",price:1400,unit:"किलो"},
+  buttermilk:{name:"छाछ",price:60,unit:"लीटर"},
+  oil:{name:"सरसों का तेल",price:190,unit:"किलो"}
 };
-
-const productNames = {
-  cow: "गाय का दूध (लीटर)",
-  buffalo: "भैंस का दूध (लीटर)",
-  curd: "दही (किलो)",
-  ghee: "घी (किलो)",
-  buttermilk: "छाछ (लीटर)",
-  oil: "सरसों का तेल (किलो)"
-};
-
-const quantityInputs = Object.keys(prices).map(id => document.getElementById(id));
-
-function calculateTotal() {
-  let total = 0;
-  for (const id of Object.keys(prices)) {
-    const input = document.getElementById(id);
-    const qty = Math.max(0, Number(input.value) || 0);
-    total += qty * prices[id];
-  }
-  document.getElementById("total").textContent =
-    total.toLocaleString("en-IN", {maximumFractionDigits: 2});
-  return total;
+const fmt = n => Number(n).toLocaleString("en-IN",{maximumFractionDigits:2});
+const orderProduct = document.getElementById("orderProduct");
+const orderQty = document.getElementById("orderQty");
+function updateOrderTotal(){
+  const p=orderProducts[orderProduct.value];
+  const q=Number(orderQty.value)||0;
+  document.getElementById("orderTotal").textContent=fmt(p.price*q);
 }
-
-quantityInputs.forEach(input => input.addEventListener("input", calculateTotal));
-
-document.getElementById("orderForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  const total = calculateTotal();
-  if (total <= 0) {
-    alert("कृपया कम से कम एक उत्पाद की मात्रा भरें।");
-    return;
-  }
-
-  const mobile = document.getElementById("mobile").value.trim();
-  if (!/^[0-9]{10}$/.test(mobile)) {
-    alert("कृपया 10 अंकों का मोबाइल नंबर लिखें।");
-    return;
-  }
-
-  const pin = document.getElementById("pin").value.trim();
-  if (pin && !/^[0-9]{6}$/.test(pin)) {
-    alert("पिन कोड 6 अंकों का होना चाहिए।");
-    return;
-  }
-
-  const lines = [];
-  for (const id of Object.keys(prices)) {
-    const qty = Math.max(0, Number(document.getElementById(id).value) || 0);
-    if (qty > 0) {
-      lines.push(productNames[id] + ": " + qty + " × ₹" + prices[id] +
-        " = ₹" + (qty * prices[id]).toLocaleString("en-IN"));
-    }
-  }
-
-  const message = [
+orderProduct.addEventListener("change",updateOrderTotal);
+orderQty.addEventListener("input",updateOrderTotal);
+document.getElementById("orderForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const q=Number(orderQty.value);
+  if(!Number.isFinite(q)||q<=0||q>1000){alert("कृपया सही मात्रा भरें।");return}
+  const phone=document.getElementById("orderPhone").value.trim();
+  if(!/^[6-9]\d{9}$/.test(phone)){alert("सही 10 अंकों का मोबाइल नंबर डालें।");return}
+  const p=orderProducts[orderProduct.value];
+  const total=q*p.price;
+  const pin="";
+  const msg=[
     "नमस्ते Ganga Organic Milk!",
     "मुझे यह ऑर्डर बुक करना है:",
     "",
-    "नाम: " + document.getElementById("customer").value.trim(),
-    "मोबाइल: " + mobile,
-    "गाँव/मोहल्ला: " + document.getElementById("area").value.trim(),
-    "पता: " + document.getElementById("address").value.trim(),
-    "पिन कोड: " + (pin || "नहीं दिया"),
+    "नाम: "+document.getElementById("orderName").value.trim(),
+    "मोबाइल: "+phone,
+    "क्षेत्र: "+document.getElementById("orderArea").value.trim(),
+    "पता: "+document.getElementById("orderAddress").value.trim(),
     "",
-    "ऑर्डर:",
-    ...lines,
-    "",
-    "उत्पाद कीमत: ₹" + total.toLocaleString("en-IN", {maximumFractionDigits: 2}),
+    "उत्पाद: "+p.name,
+    "मात्रा: "+q+" "+p.unit,
+    "रेट: ₹"+p.price+" प्रति "+p.unit,
+    "कुल कीमत: ₹"+fmt(total),
     "होम डिलीवरी: मुफ्त",
-    "पसंदीदा समय: " + document.getElementById("delivery").value,
-    "अन्य जानकारी: " + (document.getElementById("notes").value.trim() || "नहीं"),
+    "पसंदीदा समय: "+document.getElementById("orderDelivery").value,
+    "अन्य जानकारी: "+(document.getElementById("orderNotes").value.trim()||"नहीं"),
     "",
-    "कृपया ऑर्डर और डिलीवरी की पुष्टि करें।"
+    "कृपया ऑर्डर की पुष्टि करें।"
   ].join("\n");
-
-  const whatsappURL = "https://wa.me/918439282940?text=" + encodeURIComponent(message);
-  window.open(whatsappURL, "_blank");
+  window.open("https://wa.me/918439282940?text="+encodeURIComponent(msg),"_blank","noopener");
 });
-
-document.getElementById("year").textContent = new Date().getFullYear();
-calculateTotal();
+document.getElementById("year").textContent=new Date().getFullYear();
+updateOrderTotal();
 </script>
-  
-<section id="khata-login" style="max-width:500px;margin:25px auto;padding:20px;background:#fff;border-radius:14px;box-shadow:0 2px 10px #0001">
-  <h2 style="text-align:center;color:#08613d">🥛 ग्राहक खाता लॉगिन</h2>
-  <p>अपना मोबाइल नंबर डालकर OTP से लॉगिन करें।</p>
-
-  <label for="khata-phone">मोबाइल नंबर</label>
-  <input id="khata-phone" type="tel" inputmode="numeric" placeholder="10 अंकों का मोबाइल नंबर" maxlength="10">
-
-  <div id="khata-recaptcha"></div>
-  <button id="khata-send-otp" type="button">OTP भेजें</button>
-
-  <div id="khata-otp-area" style="display:none">
-    <label for="khata-otp">OTP डालें</label>
-    <input id="khata-otp" type="text" inputmode="numeric" maxlength="6" placeholder="6 अंकों का OTP">
-    <button id="khata-verify-otp" type="button">लॉगिन करें</button>
-  </div>
-
-  <p id="khata-message" role="status" style="overflow-wrap:anywhere"></p>
-</section>
 
 <script type="module">
-import { initializeApp, getApp, getApps } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
+import {initializeApp,getApps,getApp} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
 import {
-  getAuth, RecaptchaVerifier, signInWithPhoneNumber
+ getAuth,RecaptchaVerifier,signInWithPhoneNumber,onAuthStateChanged,signOut
 } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
+import {
+ getFirestore,collection,addDoc,onSnapshot,serverTimestamp
+} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBRzBe_QyWuRwNfoXKy3wkLeo6t-PgLAis",
-  authDomain: "ganga-organic-milk-khata.firebaseapp.com",
-  projectId: "ganga-organic-milk-khata",
-  storageBucket: "ganga-organic-milk-khata.firebasestorage.app",
-  messagingSenderId: "893561047797",
-  appId: "1:893561047797:web:f7f9bf633ad7b547d4d3bc"
+const firebaseConfig={
+ apiKey:"AIzaSyBRzBe_QyWuRwNfoXKy3wkLeo6t-PgLAis",
+ authDomain:"ganga-organic-milk-khata.firebaseapp.com",
+ projectId:"ganga-organic-milk-khata",
+ storageBucket:"ganga-organic-milk-khata.firebasestorage.app",
+ messagingSenderId:"893561047797",
+ appId:"1:893561047797:web:f7f9bf633ad7b547d4d3bc"
 };
+const app=getApps().length?getApp():initializeApp(firebaseConfig);
+const auth=getAuth(app);
+const db=getFirestore(app);
+const $=id=>document.getElementById(id);
+const say=(id,text)=>$(id).textContent=text;
+const today=new Date().toLocaleDateString("en-CA");
+$("entry-date").value=today;
+$("payment-date").value=today;
 
-const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const message = document.getElementById("khata-message");
-let confirmation = null;
-let recaptcha = null;
+let confirmation=null;
+let recaptcha=null;
+let unsubscribeCustomers=null;
+let unsubscribeEntries=null;
+let unsubscribePayments=null;
+let customers=[];
+let entries=[];
+let payments=[];
+const products={
+ cow:{name:"गाय का दूध",unit:"लीटर",rate:70},
+ buffalo:{name:"भैंस का दूध",unit:"लीटर",rate:80},
+ curd:{name:"दही",unit:"किलो",rate:80},
+ ghee:{name:"घी",unit:"किलो",rate:1400},
+ buttermilk:{name:"छाछ",unit:"लीटर",rate:60},
+ oil:{name:"सरसों का तेल",unit:"किलो",rate:190}
+};
+function customerPath(user){return collection(db,"users",user.uid,"customers")}
+function entryPath(user){return collection(db,"users",user.uid,"entries")}
+function paymentPath(user){return collection(db,"users",user.uid,"payments")}
 
-document.getElementById("khata-send-otp").addEventListener("click", async () => {
-  const phone = document.getElementById("khata-phone").value.trim();
-  if (!/^[6-9]\d{9}$/.test(phone)) {
-    message.textContent = "कृपया सही 10 अंकों का भारतीय मोबाइल नंबर डालें।";
-    return;
-  }
-
-  try {
-    message.textContent = "OTP भेजने की कोशिश हो रही है...";
-    if (!recaptcha) {
-      recaptcha = new RecaptchaVerifier(auth, "khata-recaptcha", {});
-    }
-    confirmation = await signInWithPhoneNumber(auth, "+91" + phone, recaptcha);
-    document.getElementById("khata-otp-area").style.display = "block";
-    message.textContent = "OTP भेज दिया गया है। अपना संदेश जाँचें।";
-  } catch (error) {
-    message.textContent = "OTP नहीं भेजा जा सका: " + error.message;
-    if (recaptcha) {
-      try { await recaptcha.clear(); } catch (_) {}
-      recaptcha = null;
-    }
-  }
+function safeOption(value,label){
+ const o=document.createElement("option");o.value=value;o.textContent=label;return o;
+}
+function fillCustomerSelects(){
+ for(const id of ["entry-customer","payment-customer"]){
+  const s=$(id);s.replaceChildren();
+  s.appendChild(safeOption("","ग्राहक चुनें"));
+  customers.forEach(c=>s.appendChild(safeOption(c.id,c.name)));
+ }
+}
+function renderCustomers(){
+ const box=$("customer-list");box.replaceChildren();
+ if(!customers.length){box.textContent="अभी कोई ग्राहक सेव नहीं है।";return}
+ customers.forEach(c=>{
+  const related=entries.filter(e=>e.customerId===c.id);
+  const delivered=related.reduce((sum,e)=>sum+Number(e.amount||0),0);
+  const paid=payments.filter(p=>p.customerId===c.id).reduce((sum,p)=>sum+Number(p.amount||0),0);
+  const due=delivered-paid;
+  const div=document.createElement("div");div.className="item";
+  const title=document.createElement("strong");title.textContent=c.name;
+  const detail=document.createElement("p");
+  detail.textContent=(c.phone||"मोबाइल नहीं दिया")+" • "+(products[c.product]?.name||"उत्पाद")+
+   " • रेट ₹"+c.rate;
+  const totals=document.createElement("p");
+  totals.textContent="कुल बिल: ₹"+fmt(delivered)+" | जमा: ₹"+fmt(paid)+" | बाकी: ₹"+fmt(due);
+  div.append(title,detail,totals);box.appendChild(div);
+ });
+}
+function renderLedger(){
+ const box=$("ledger-list");box.replaceChildren();
+ const all=[
+  ...entries.map(e=>({...e,kind:"entry"})),
+  ...payments.map(p=>({...p,kind:"payment"}))
+ ].sort((a,b)=>(b.date||"").localeCompare(a.date||""));
+ if(!all.length){box.textContent="अभी कोई दूध या भुगतान रिकॉर्ड नहीं है।";return}
+ all.slice(0,100).forEach(r=>{
+  const c=customers.find(x=>x.id===r.customerId);
+  const div=document.createElement("div");div.className="item";
+  const title=document.createElement("strong");
+  title.textContent=(r.kind==="entry"?"दूध / उत्पाद":"भुगतान")+" • "+(c?.name||"ग्राहक");
+  const detail=document.createElement("p");
+  detail.textContent=(r.date||"तारीख नहीं")+" • "+(r.kind==="entry"?
+   (products[r.product]?.name||"उत्पाद")+" "+r.qty+" "+(products[r.product]?.unit||"")+" • ₹"+fmt(r.amount):
+   "जमा ₹"+fmt(r.amount)+(r.note?" • "+r.note:""));
+  div.append(title,detail);box.appendChild(div);
+ });
+}
+function refreshViews(){fillCustomerSelects();renderCustomers();renderLedger()}
+function stopListeners(){
+ [unsubscribeCustomers,unsubscribeEntries,unsubscribePayments].forEach(fn=>{if(fn)fn()});
+ unsubscribeCustomers=unsubscribeEntries=unsubscribePayments=null;
+ customers=[];entries=[];payments=[];
+ refreshViews();
+}
+function startListeners(user){
+ stopListeners();
+ unsubscribeCustomers=onSnapshot(customerPath(user),snap=>{
+  customers=snap.docs.map(d=>({id:d.id,...d.data()}));refreshViews();
+ },err=>say("customer-message","ग्राहक लोड नहीं हुए: "+err.message));
+ unsubscribeEntries=onSnapshot(entryPath(user),snap=>{
+  entries=snap.docs.map(d=>({id:d.id,...d.data()}));refreshViews();
+ },err=>say("entry-message","रिकॉर्ड लोड नहीं हुए: "+err.message));
+ unsubscribePayments=onSnapshot(paymentPath(user),snap=>{
+  payments=snap.docs.map(d=>({id:d.id,...d.data()}));refreshViews();
+ },err=>say("payment-message","भुगतान लोड नहीं हुए: "+err.message));
+}
+$("khata-send-otp").addEventListener("click",async()=>{
+ const phone=$("khata-phone").value.trim();
+ if(!/^[6-9]\d{9}$/.test(phone)){
+  say("khata-message","सही 10 अंकों का भारतीय मोबाइल नंबर डालें।");return;
+ }
+ $("khata-send-otp").disabled=true;
+ try{
+  say("khata-message","OTP भेजा जा रहा है...");
+  if(recaptcha){try{recaptcha.clear()}catch(e){}recaptcha=null}
+  recaptcha=new RecaptchaVerifier(auth,"khata-recaptcha",{});
+  await recaptcha.render();
+  confirmation=await signInWithPhoneNumber(auth,"+91"+phone,recaptcha);
+  $("khata-otp-area").classList.remove("hidden");
+  say("khata-message","OTP भेज दिया गया है। SMS में आया कोड डालें।");
+ }catch(err){
+  say("khata-message","OTP नहीं भेजा जा सका। Firebase Phone Authentication और Authorized Domains जाँचें। ("+err.code+")");
+  if(recaptcha){try{recaptcha.clear()}catch(e){}recaptcha=null}
+ }finally{$("khata-send-otp").disabled=false}
 });
+$("khata-verify-otp").addEventListener("click",async()=>{
+ const otp=$("khata-otp").value.trim();
+ if(!confirmation||!/^\d{6}$/.test(otp)){say("khata-message","पहले OTP मँगाएँ और 6 अंक डालें।");return}
+ try{
+  await confirmation.confirm(otp);
+  say("khata-message","लॉगिन सफल!");
+ }catch(err){say("khata-message","OTP गलत या समाप्त हो गया है। फिर से कोशिश करें।")}
+});
+$("khata-logout").addEventListener("click",async()=>{
+ try{await signOut(auth);say("khata-message","लॉगआउट हो गया।")}catch(e){say("khata-message","लॉगआउट नहीं हो सका।")}
+});
+onAuthStateChanged(auth,user=>{
+ if(user){
+  $("khata-app").classList.remove("hidden");
+  $("khata-logout").classList.remove("hidden");
+  $("signed-user").textContent="लॉगिन: "+user.phoneNumber;
+  say("khata-message","लॉगिन सफल। ग्राहक का हिसाब खोल सकते हैं।");
+  startListeners(user);
+ }else{
+  $("khata-app").classList.add("hidden");
+  $("khata-logout").classList.add("hidden");
+  $("signed-user").textContent="";
+  stopListeners();
+ }
+});
+$("milk-type").addEventListener("change",()=>{
+ $("milk-rate").value=products[$("milk-type").value].rate;
+});
+$("entry-product").addEventListener("change",()=>{
+ $("entry-rate").value=products[$("entry-product").value].rate;
+});
+$("entry-rate").value=products[$("entry-product").value].rate;
 
-document.getElementById("khata-verify-otp").addEventListener("click", async () => {
-  const otp = document.getElementById("khata-otp").value.trim();
-  if (!confirmation || !/^\d{6}$/.test(otp)) {
-    message.textContent = "पहले OTP मँगाएँ और 6 अंकों का कोड डालें।";
-    return;
-  }
-  try {
-    const result = await confirmation.confirm(otp);
-    message.textContent = "लॉगिन सफल! UID: " + result.user.uid +
-      "। अभी ग्राहक का हिसाब जोड़ना बाकी है।";
-  } catch (_) {
-    message.textContent = "OTP गलत या समाप्त हो गया है। फिर से कोशिश करें।";
-  }
+$("customer-form").addEventListener("submit",async e=>{
+ e.preventDefault();
+ const user=auth.currentUser;
+ if(!user){say("customer-message","पहले OTP से लॉगिन करें।");return}
+ const name=$("customer-name").value.trim();
+ const phone=$("customer-phone").value.trim();
+ const rate=Number($("milk-rate").value);
+ if(!name||!Number.isFinite(rate)||rate<=0){say("customer-message","नाम और सही रेट भरें।");return}
+ if(phone&&!/^[6-9]\d{9}$/.test(phone)){say("customer-message","ग्राहक का मोबाइल 10 अंकों का होना चाहिए।");return}
+ try{
+  await addDoc(customerPath(user),{
+   name,phone,product:$("milk-type").value,rate,
+   createdAt:serverTimestamp()
+  });
+  $("customer-form").reset();
+  $("milk-rate").value=products[$("milk-type").value].rate;
+  say("customer-message","ग्राहक सफलतापूर्वक सेव हो गया।");
+ }catch(err){say("customer-message","सेव नहीं हुआ। Firestore Rules जाँचें। ("+err.code+")")}
+});
+$("entry-form").addEventListener("submit",async e=>{
+ e.preventDefault();
+ const user=auth.currentUser;
+ if(!user){say("entry-message","पहले लॉगिन करें।");return}
+ const customerId=$("entry-customer").value;
+ const product=$("entry-product").value;
+ const qty=Number($("entry-qty").value);
+ const rate=Number($("entry-rate").value);
+ const date=$("entry-date").value;
+ if(!customerId||!date||!Number.isFinite(qty)||qty<=0||!Number.isFinite(rate)||rate<=0){
+  say("entry-message","ग्राहक, तारीख, मात्रा और रेट सही भरें।");return
+ }
+ try{
+  await addDoc(entryPath(user),{
+   customerId,product,qty,rate,amount:qty*rate,date,
+   createdAt:serverTimestamp()
+  });
+  $("entry-qty").value="";
+  say("entry-message","दूध की एंट्री सेव हो गई। बिल में रकम जुड़ गई।");
+ }catch(err){say("entry-message","एंट्री सेव नहीं हुई। Rules जाँचें। ("+err.code+")")}
+});
+$("payment-form").addEventListener("submit",async e=>{
+ e.preventDefault();
+ const user=auth.currentUser;
+ if(!user){say("payment-message","पहले लॉगिन करें।");return}
+ const customerId=$("payment-customer").value;
+ const amount=Number($("payment-amount").value);
+ const date=$("payment-date").value;
+ const note=$("payment-note").value.trim();
+ if(!customerId||!date||!Number.isFinite(amount)||amount<=0){
+  say("payment-message","ग्राहक, तारीख और सही भुगतान राशि भरें।");return
+ }
+ try{
+  await addDoc(paymentPath(user),{customerId,amount,date,note,createdAt:serverTimestamp()});
+  $("payment-amount").value="";$("payment-note").value="";
+  say("payment-message","भुगतान सेव हो गया। बाकी रकम अपडेट हो गई।");
+ }catch(err){say("payment-message","भुगतान सेव नहीं हुआ। Rules जाँचें। ("+err.code+")")}
 });
 </script>
-<section id="customer-section">
-  <h2>🥛 Ganga Organic Milk</h2>
-  <h3>नया ग्राहक जोड़ें</h3>
-
-  <form id="customer-form">
-    <input id="customer-name"
-      placeholder="ग्राहक का नाम" required />
-
-    <input id="customer-phone"
-      placeholder="मोबाइल नंबर" type="tel" />
-
-    <select id="milk-type" required>
-      <option value="cow">गाय का दूध</option>
-      <option value="buffalo">भैंस का दूध</option>
-    </select>
-
-    <input id="milk-rate" type="number"
-      min="1" value="70" placeholder="रेट प्रति लीटर" required />
-
-    <button type="submit">ग्राहक सेव करें</button>
-  </form>
-
-  <p id="customer-message"></p>
-  <h3>ग्राहकों की सूची</h3>
-  <div id="customer-list"></div>
-</section>
-  
-
 </body>
 </html>
